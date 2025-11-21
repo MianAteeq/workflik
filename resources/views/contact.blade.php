@@ -2,6 +2,8 @@
 <html lang="en">
 @section('css')
     <link rel="stylesheet" href="{{ asset('asset/contact.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/header.css') }}">  
+    <link rel="stylesheet" href="{{ asset('asset/footer.css') }}">  
     <style>
         .success-alert {
             padding: 15px 20px;

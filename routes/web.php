@@ -38,6 +38,20 @@ Route::get('/hr', function () {
     return view('hr');
 })->name('home.hr');
 
+
 Route::get('/pos', function () {
     return view('pos');
 })->name('home.pos');
+
+
+Route::get('/term', function () {
+    return view('term');
+})->name('home.term');
+
+Route::get('/privacy', function () {
+    return view('privacy');
+})->name('home.privacy');
+
+Route::get('/return', function () {
+    return view('return');
+})->name('home.return');

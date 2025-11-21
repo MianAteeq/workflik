@@ -12,11 +12,36 @@
           <!-- Navigation -->
           <nav class="nav">
               <ul>
-                  <li><a href="{{ route('home') }}" class="active" aria-current="page">Home</a></li>
-                  <li><a href="{{ route('home.services') }}">Services</a></li>
-                  <li><a href="{{ route('home.pricing') }}">Pricing</a></li>
-                  <li><a href="{{ route('home.contact') }}">Contact Us</a></li>
-                  <li><a href="{{ route('home.about') }}">About Us</a></li>
+                <li>
+    <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">
+        Home
+    </a>
+</li>
+
+<li>
+    <a href="{{ route('home.services') }}" class="{{ request()->routeIs('home.services') ? 'active' : '' }}">
+        Services
+    </a>
+</li>
+
+<li>
+    <a href="{{ route('home.pricing') }}" class="{{ request()->routeIs('home.pricing') ? 'active' : '' }}">
+        Pricing
+    </a>
+</li>
+
+<li>
+    <a href="{{ route('home.contact') }}" class="{{ request()->routeIs('home.contact') ? 'active' : '' }}">
+        Contact Us
+    </a>
+</li>
+
+<li>
+    <a href="{{ route('home.about') }}" class="{{ request()->routeIs('home.about') ? 'active' : '' }}">
+        About Us
+    </a>
+</li>
+
               </ul>
           </nav>
 

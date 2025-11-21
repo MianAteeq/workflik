@@ -4,6 +4,8 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('asset/home.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/Accounting.css') }}">
+    <link rel="stylesheet" href="{{ asset('asset/header.css') }}">  
+    <link rel="stylesheet" href="{{ asset('asset/footer.css') }}">  
 @endsection
 @include('layouts.head')
 
