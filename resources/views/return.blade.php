@@ -10,12 +10,12 @@
 <style>
 .section {
   margin-top: 150px;
-  margin-left: 40px;
+  margin-left: 60px;
 }
 
 .container {
-  padding-left: 40px;
-  margin-bottom: 40px;
+  padding-left: 60px;
+  margin-bottom: 80px;
 }
 
 .container h1 {
@@ -23,7 +23,6 @@
   line-height: 70px;
   color: #2a2a0f;
   margin-bottom: 20px;
-  max-width: 1200px;
 }
 
 .container h3 {
@@ -35,17 +34,176 @@
 }
 
 .container p {
-  color: grey;
+  color: #222222ff;
   max-width: 1200px;
 }
 
 .container ul {
   padding-left: 25px;
-  color: grey;
+  color: #222222ff;
 }
 
 .content {
   padding-left: 16px;
+}
+
+@media (max-width:1030px) {
+  .section {
+    margin-top: 100px;
+    margin-left: 20px;
+  }
+
+  .container {
+    margin-bottom: 80px;
+    padding: 25px;
+  }
+
+  .container h1 {
+    font-size: 35px;
+    line-height: 70px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width:770px) {
+  .section {
+    margin-top: 100px;
+    margin-left: 20px;
+  }
+
+  .container {
+    margin-bottom: 80px;
+    padding: 25px;
+  }
+
+  .container h1 {
+    font-size: 35px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width:430px) {
+  .section {
+    margin-top: 100px;
+    margin-left: 10px;
+  }
+
+  .container {
+    margin-bottom: 80px;
+    padding: 15px;
+  }
+
+  .container h1 {
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+
+  .container h3 {
+    font-size: 14px;
+  }
+
+  .container h2 {
+    font-size: 18px
+  }
+
+  .container p {
+    max-width: 1100px;
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .container ul {
+    padding-left: 15px;
+    font-size: 14px
+  }
+
+  .content {
+    padding-left: 10px;
+  }
+}
+
+@media (max-width:380px) {
+  .section {
+    margin-top: 100px;
+    margin-left: 10px;
+  }
+
+  .container {
+    margin-bottom: 80px;
+    padding: 15px;
+  }
+
+  .container h1 {
+    font-size: 25px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  .container h3 {
+    font-size: 14px;
+  }
+
+  .container h2 {
+    font-size: 18px
+  }
+
+  .container p {
+    max-width: 1100px;
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .container ul {
+    padding-left: 15px;
+    font-size: 14px
+  }
+
+  .content {
+    padding-left: 10px;
+  }
+}
+
+@media (max-width:320px) {
+  .section {
+    margin-top: 100px;
+    margin-left: 10px;
+  }
+
+  .container {
+    margin-bottom: 80px;
+    padding: 15px;
+  }
+
+  .container h1 {
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+
+  .container h3 {
+    font-size: 14px;
+  }
+
+  .container h2 {
+    font-size: 18px
+  }
+
+  .container p {
+    max-width: 1100px;
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .container ul {
+    padding-left: 15px;
+    font-size: 14px
+  }
+
+  .content {
+    padding-left: 10px;
+  }
 }
 </style>
 

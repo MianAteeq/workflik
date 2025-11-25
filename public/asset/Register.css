@@ -101,14 +101,14 @@ form input {
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   border-radius: 25px;
   outline: none;
-  font-size: 0.8rem;
+  font-size: 14px;
 }
 form input:focus {
   border-color: #2a2a0f;
 }
 
 form ::placeholder{
-  font-size: 10px;
+  font-size: 14px;
   color: #aeaea7;
 }
 

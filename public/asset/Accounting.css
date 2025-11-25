@@ -1,3 +1,7 @@
+/* .body{
+    font-family: "Poppins", sans-serif;
+  font-style: normal;
+} */
 
 /* ================================================= Accounting Section ======================================================= */
 .accounting-section {
@@ -13,7 +17,7 @@
   content: "";
   position: absolute;
   inset: 0;  
-  background: url("img/dashboard-img1.png") center/cover no-repeat;
+  background: url("/img/dashboard-img1.png") center/cover no-repeat;
   opacity: 0.06;              
   z-index: 0;               
   margin: 150px 30px 50px 10px;
@@ -34,15 +38,14 @@
 
 /* ===== Left column ===== */
 .accounting-left h1 {
-  font-size: 60px;
+  font-size: 40px;
   margin-bottom: 20px;
   color: #2a2a0f;
   font-weight: bold;
-  font-family: "Outfit", sans-serif;
 }
 
 .accounting-left p {
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.6;
   margin-bottom: 40px;
   color: #333;
@@ -57,7 +60,6 @@
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  font-family: "Outfit", sans-serif;
   transition: background 0.2s;
 }
 .acc-btn:hover {
@@ -250,13 +252,14 @@
 }
 
 .accounts-container h1{
-  font-size: 50px;
+  font-size: 40px;
+  color: #2a2a0f;
 }
 
 
 .accounts-container p{
   max-width: 1300px;
-  font-size: 20px;
+  font-size: 18px;
   color: rgb(64, 64, 64);
 }
 
@@ -265,14 +268,18 @@
   text-align: center;
   padding: 40px;
   font-weight: 700;
+  color: #2a2a0f;
 }
-
+.sub-li{
+  margin-left: 30px;
+  font-size: 16px;
+}
 .features-list{
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .features-list li{
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .features-list ul{
@@ -284,6 +291,7 @@
 
 .features-list li strong{
   font-size: 20px;
+  color: #2a2a0f;
 }
 
 
@@ -464,7 +472,7 @@
 .accounts-container {
   max-width: 1350px;
   margin: 0 auto;
-  font-family: "Outfit", sans-serif;
+  
   color: #2a2a0f;
 }
 
@@ -539,7 +547,7 @@
 .accounts-container {
   max-width: 1350px;
   margin: 0 auto;
-  font-family: "Outfit", sans-serif;
+  
   color: #2a2a0f;
 }
 

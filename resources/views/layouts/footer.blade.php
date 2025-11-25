@@ -87,12 +87,16 @@ document.addEventListener("DOMContentLoaded", function() {
       <a href="https://www.instagram.com/worflik/"><i class="fab fa-instagram"></i></a>
     </div>
 
-    <button class="get-more-btn">Get Started</button>
+    <a href="{{ url()->current() }}" class="get-more-btn">
+      Get Started
+    </a>
   </section>
   <div class="footer-bar"></div>
   <div class="copyright-text">
     <p>Copyright <i class="fa-regular fa-copyright"></i> 2025-2026 | WorFlik ALL RIGHTS RESERVED | Design and
-      Developed By Fission Monster
+      Developed By <a href="https://fissionmonster.com/" target="_blank" rel="noopener noreferrer">
+        Fission Monster
+      </a>
 
     </p>
   </div>
