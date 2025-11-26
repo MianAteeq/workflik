@@ -32,7 +32,7 @@ Accounting, HRM, POS, Inventory, and cloud automation for small and medium enter
         every department in one seamless, could-powered platform. Whether you run one branch or many, WorFlik
         helps you scale with clarity and control.
       </p>
-      <a class="contact-btn" href="#">Get Started</a>
+      <a class="contact-btn" href="{{ route('home.register') }}">Get Started</a>
     </div>
 
     <div class="right-section">
