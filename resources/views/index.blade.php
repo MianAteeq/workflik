@@ -143,8 +143,10 @@
 
       <div class="journey-img-container">
 
-        <div class="/img-text">
-          <img src="/img/choose-journey.png">
+        <div class="img-text">
+          <div class="img-box">
+            <img src="/img/choose-journey.png">
+          </div>
           <p>Choose Your Package & Services</p>
         </div>
 
@@ -152,8 +154,10 @@
           <img src="/img/curve-arrow.png" alt="">
         </div>
 
-        <div class="/img-text">
-          <img src="/img/registration.png">
+        <div class="img-text">
+          <div class="img-box">
+            <img src="/img/registration.png">
+          </div>
           <p>Complete Registration</p>
         </div>
 
@@ -161,15 +165,20 @@
           <img src="/img/curve-arrow.png" alt="">
         </div>
 
-        <div class="/img-text">
-          <img src="/img/start-working.png">
+        <div class="img-text">
+          <div class="img-box">
+            <img src="/img/start-working.png">
+          </div>
           <p>Get Started Instantly</p>
         </div>
+
       </div>
+
       <div class="free-trial-btn">
         <a href="{{ route('home.register') }}" class="trial-btn">Start Your Free Trial</a>
       </div>
     </div>
+
 
     <!-----Business Help Card----->
     <section class="outer-section">

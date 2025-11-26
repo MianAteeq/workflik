@@ -55,3 +55,7 @@ Route::get('/privacy', function () {
 Route::get('/return', function () {
     return view('return');
 })->name('home.return');
+
+Route::get('/cookies', function () {
+    return view('cookies');
+})->name('home.cookies');

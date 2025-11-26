@@ -58,9 +58,10 @@ document.addEventListener("DOMContentLoaded", function() {
         <h3>Explore</h3>
         <ul>
           <li><a href="{{ route('home.pricing') }}">Pricing</a></li>
-          <li><a href="{{ route('home.term') }}">Term and Condition</a></li>
+          <li><a href="{{ route('home.term') }}">Terms and Conditions</a></li>
           <li><a href="{{ route('home.privacy') }}">Privacy & Policy</a></li>
           <li><a href="{{ route('home.return') }}">Return Policy</a></li>
+          <li><a href="{{ route('home.cookies') }}">Cookies Policy</a></li>
         </ul>
       </div>
 
@@ -93,8 +94,8 @@ document.addEventListener("DOMContentLoaded", function() {
   </section>
   <div class="footer-bar"></div>
   <div class="copyright-text">
-    <p>Copyright <i class="fa-regular fa-copyright"></i> 2025-2026 | WorFlik ALL RIGHTS RESERVED | Design and
-      Developed By <a href="https://fissionmonster.com/" target="_blank" rel="noopener noreferrer">
+    <p>Copyright <i class="fa-regular fa-copyright"></i> 2025-2026 | WorFlik all rights reserved | Product by <a
+        href="https://fissionmonster.com/" target="_blank" rel="noopener noreferrer">
         Fission Monster
       </a>
 
