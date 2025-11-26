@@ -8,10 +8,19 @@
 
 @endsection
 @include('layouts.head')
+@extends('layouts.app')
+@section('meta_title', 'WorFlik – All-in-One ERP for Accounting, HR, POS & Inventory')
+
+@section('meta_description',
+'WorFlik is a cloud-based ERP system that helps businesses manage accounting, HR, payroll, POS billing, inventory, and
+more from one dashboard.'
+)
+@section('meta_keywords', 'erp software, accounting, pos, hr payroll, inventory management')
 
 <body>
 
   @include('layouts.header')
+
 
 
 

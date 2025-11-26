@@ -6,6 +6,13 @@
 <link rel="stylesheet" href="{{ asset('asset/footer.css') }}">
 @endsection
 @include('layouts.head')
+@extends('layouts.app')
+@section('meta_title', 'WorFlik Services – ERP Modules for Accounting, HRM, POS & Inventory')
+
+@section('meta_description',
+'Explore WorFlik’s ERP services, including Accounting & Finance, HR & Payroll, POS Management, Inventory Tracking,
+Multi-Company support, and role-based access. A complete solution to manage your entire business.'
+)
 
 <body>
 
