@@ -31,7 +31,7 @@ Inventory modules. Flexible plans with free trial and full support included.'
           No hidden costs, no surprise - just flexible pricing that grows with your business. Choose the
           modules you need and scale effortlessly as you expand.
         </p>
-        <a href="#" class="pricing-btn">Get Started</a>
+        <a href="{{ route('home.register') }}" class="pricing-btn">Get Started</a>
       </div>
 
       <!-- Right image -->

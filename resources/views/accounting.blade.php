@@ -25,7 +25,7 @@
           Track income, expenses, dues, and profits with complete financial
           transparency using our advanced Accounts Management system.
         </p>
-        <a href="#" class="acc-btn">Get Started</a>
+        <a href="{{ route('home.register') }}" class="acc-btn">Get Started</a>
       </div>
 
       <!-- Right image -->
@@ -124,7 +124,7 @@
 
   <!------Get Started Button------>
   <div class="get-btn-div">
-    <a href="#" class="get-btn">Get Started</a>
+    <a href="{{ route('home.register') }}" class="get-btn">Get Started</a>
   </div>
 
   <!-- Font Awesome for search icon -->

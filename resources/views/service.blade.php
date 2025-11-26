@@ -37,7 +37,7 @@ Multi-Company support, and role-based access. A complete solution to manage your
           systems and manual work - and gain complete control, efficiency, and
           insight across your business. Designed to scale with you at every stage.
         </p>
-        <a class="dash-btn" href="#">Get Started</a>
+        <a class="dash-btn" href="{{ route('home.register') }}">Get Started</a>
       </div>
     </div>
   </section>

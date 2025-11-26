@@ -30,7 +30,7 @@ module built for accuracy, automation, and scalability.'
         <p>
           Manage staff details, salaries, commissions, and work schedules with ease.
         </p>
-        <a href="#" class="acc-btn">Get Started</a>
+        <a href="{{ route('home.register') }}" class="acc-btn">Get Started</a>
       </div>
 
       <!-- Right image -->
@@ -135,7 +135,7 @@ module built for accuracy, automation, and scalability.'
 
     <!------Get Started Button------>
     <div class="get-btn-div">
-      <a href="#" class="get-btn">Get Started</a>
+      <a href="{{ route('home.register') }}" class="get-btn">Get Started</a>
     </div>
 
   </section>

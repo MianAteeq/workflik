@@ -53,7 +53,7 @@ streamline your business with our complete cloud-based ERP solution.'
         <strong>Have Question?</strong> Need a custom solution? Our team is here to help.
         Reach out and let's explore how WorFlik can simplify, scale, and empower your operations.
       </p>
-      <a class="contact-btn" href="#">Get Started</a>
+      <a class="contact-btn" href="{{ route('home.register') }}">Get Started</a>
     </div>
 
     <div class="right-section">
