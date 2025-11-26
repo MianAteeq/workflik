@@ -235,11 +235,11 @@ strong {
   <!-- ======================================= Pricing Section 1 ======================================================== -->
   <section class="section">
     <div class="container">
-      <h1>Worflik Cookie Policy</h1>
+      <h1>Worflik Cookies Policy</h1>
       <div class="content">
         <p><strong>Owned & Operated By:</strong> Fission Monster</p>
         <p><strong>Contact:</strong> contact@worflik.com</p>
-
+        <br>
         <h2>1. INTRODUCTION</h2>
         <p>This Cookie Policy explains how <strong>Worflik</strong> (“we,” “us,” “our”), an ERP system owned and
           operated by
