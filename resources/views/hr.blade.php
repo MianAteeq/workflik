@@ -7,13 +7,15 @@
 <link rel="stylesheet" href="{{ asset('asset/header.css') }}">
 <link rel="stylesheet" href="{{ asset('asset/footer.css') }}">
 @endsection
-@include('layouts.head')
 
 @section('meta_title', 'WorFlik HR & Payroll System – Smart HRM for Modern Businesses')
-@section('meta_description',
-'Manage employee records, attendance, payroll, leave, and HR compliance effortlessly. WorFlik offers a complete HRM
-module built for accuracy, automation, and scalability.'
-)
+@section('meta_description', 'Manage employee records, attendance, payroll, leave, and HR compliance effortlessly.
+WorFlik offers a complete HRM module built for accuracy, automation, and scalability.
+')
+@section('meta_keywords', 'web development, mark)
+
+@include('layouts.head')
+
 
 <body>
 

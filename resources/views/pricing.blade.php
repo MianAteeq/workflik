@@ -6,14 +6,13 @@
 <link rel="stylesheet" href="{{ asset('asset/header.css') }}">
 <link rel="stylesheet" href="{{ asset('asset/footer.css') }}">
 @endsection
-@include('layouts.head')
-
 @section('meta_title', 'WorFlik Pricing – Affordable ERP Plans for Every Business')
+@section('meta_description', 'Choose the right WorFlik ERP package for your business needs. Transparent pricing for
+Accounting, HR, POS, and Inventory modules. Flexible plans with free trial and full support included.
+')
+@section('meta_keywords', 'web development, marketing, worflik')
 
-@section('meta_description',
-'Choose the right WorFlik ERP package for your business needs. Transparent pricing for Accounting, HR, POS, and
-Inventory modules. Flexible plans with free trial and full support included.'
-)
+@include('layouts.head')
 
 <body>
 

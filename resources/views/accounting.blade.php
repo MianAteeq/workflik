@@ -7,6 +7,12 @@
 <link rel="stylesheet" href="{{ asset('asset/header.css') }}">
 <link rel="stylesheet" href="{{ asset('asset/footer.css') }}">
 @endsection
+
+@section('meta_title', 'WorFlik Accounting Software – Manage Finance, Billing & Reports')
+@section('meta_description', 'Simplify financial management with WorFlik’s Accounting module. Automate invoicing,
+billing, ledgers, expense tracking, tax reports, and real-time financial analytics — all in one ERP system.')
+@section('meta_keywords', 'web development, marketing, worflik')
+
 @include('layouts.head')
 
 <body>

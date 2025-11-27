@@ -8,13 +8,14 @@
 <link rel="stylesheet" href="{{ asset('asset/header.css') }}">
 <link rel="stylesheet" href="{{ asset('asset/footer.css') }}">
 @endsection
-@include('layouts.head')
 
 @section('meta_title', 'WorFlik POS Software – Fast Billing & Inventory Sync')
-@section('meta_description',
-'Boost your sales efficiency with WorFlik POS. Enjoy fast billing, stock synchronization, multi-store management, and
-real-time sales reporting — fully integrated with the ERP system.'
-)
+@section('meta_description', 'Boost your sales efficiency with WorFlik POS. Enjoy fast billing, stock synchronization,
+multi-store management, and real-time sales reporting — fully integrated with the ERP system.
+')
+@section('meta_keywords', 'web development, mark)
+
+@include('layouts.head')
 
 <body>
 

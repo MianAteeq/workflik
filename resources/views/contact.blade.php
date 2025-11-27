@@ -30,14 +30,13 @@
 }
 </style>
 @endsection
-@include('layouts.head')
 
 @section('meta_title', 'Contact WorFlik – Get Support or Book a Demo')
+@section('meta_description', 'Have questions about WorFlik ERP? Contact our support team or book a personalized demo.
+We’re here to help you streamline your business with our complete cloud-based ERP solution.')
+@section('meta_keywords', 'web development, marketing, worflik')
 
-@section('meta_description',
-'Have questions about WorFlik ERP? Contact our support team or book a personalized demo. We’re here to help you
-streamline your business with our complete cloud-based ERP solution.'
-)
+@include('layouts.head')
 
 <body>
 

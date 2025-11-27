@@ -5,14 +5,14 @@
 <link rel="stylesheet" href="{{ asset('asset/header.css') }}">
 <link rel="stylesheet" href="{{ asset('asset/footer.css') }}">
 @endsection
-@include('layouts.head')
 
 @section('meta_title', 'About WorFlik – A Complete ERP Solution for Growing Businesses')
+@section('meta_description', 'Learn about WorFlik’s mission to simplify business management through a unified ERP
+system. Discover our expertise in Accounting, HRM, POS, Inventory, and cloud automation for small and medium
+enterprises.')
+@section('meta_keywords', 'web development, marketing, worflik')
 
-@section('meta_description',
-'Learn about WorFlik’s mission to simplify business management through a unified ERP system. Discover our expertise in
-Accounting, HRM, POS, Inventory, and cloud automation for small and medium enterprises.'
-)
+@include('layouts.head')
 
 <body>
 
