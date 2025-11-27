@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="{{ asset('asset/footer.css') }}">
 @endsection
 @include('layouts.head')
-@extends('layouts.app')
+
 @section('meta_title', 'WorFlik POS Software – Fast Billing & Inventory Sync')
 @section('meta_description',
 'Boost your sales efficiency with WorFlik POS. Enjoy fast billing, stock synchronization, multi-store management, and

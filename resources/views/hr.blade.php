@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="{{ asset('asset/footer.css') }}">
 @endsection
 @include('layouts.head')
-@extends('layouts.app')
+
 @section('meta_title', 'WorFlik HR & Payroll System – Smart HRM for Modern Businesses')
 @section('meta_description',
 'Manage employee records, attendance, payroll, leave, and HR compliance effortlessly. WorFlik offers a complete HRM

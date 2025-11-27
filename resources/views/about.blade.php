@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ asset('asset/footer.css') }}">
 @endsection
 @include('layouts.head')
-@extends('layouts.app')
+
 @section('meta_title', 'About WorFlik – A Complete ERP Solution for Growing Businesses')
 
 @section('meta_description',

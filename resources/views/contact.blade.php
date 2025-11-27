@@ -31,7 +31,7 @@
 </style>
 @endsection
 @include('layouts.head')
-@extends('layouts.app')
+
 @section('meta_title', 'Contact WorFlik – Get Support or Book a Demo')
 
 @section('meta_description',
@@ -137,7 +137,7 @@ streamline your business with our complete cloud-based ERP solution.'
   <!---===============================================Contact Links Section=======================================================-->
   <!-- <section class="contact-info-section">
         <div class="info-container">
-             Left image 
+             Left image
   <div class="info-image">
     <img src="/img/contact-img.png" alt="Phone illustration">
   </div>
