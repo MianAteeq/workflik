@@ -1,118 +1,134 @@
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;   /* ✅ prevent horizontal scroll/white gap */
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden; /* ✅ prevent horizontal scroll/white gap */
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
 }
-
-
 
 /* ---------- Header ---------- */
 .header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  background: #fff;
-  box-shadow: 0 7px 6px rgba(0,0,0,0.05);
-  z-index: 1000;
-  transition: transform .4s ease; /* for hide-on-scroll if you add .hide */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 7px 6px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    transition: transform 0.4s ease; /* for hide-on-scroll if you add .hide */
 }
 .header.hide {
-  transform: translateY(-100%);
+    transform: translateY(-100%);
 }
 
 .header .container {
-  max-width: 1450px;
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* ---------- Logo ---------- */
 .logo img {
-  height: 60px;
+    height: 60px;
 }
 
 /* ---------- Navigation ---------- */
 .nav ul {
-  list-style: none;
-  display: flex;
-  gap: clamp(1rem, 4vw, 5rem); /* fluid gap: 1rem–5rem depending on width */
+    list-style: none;
+    display: flex;
+    gap: clamp(1rem, 4vw, 5rem); /* fluid gap: 1rem–5rem depending on width */
 }
 .nav a {
-  text-decoration: none;
-  color: #585858;
-  font-weight: 500;
-  transition: color .2s;
+    text-decoration: none;
+    color: #585858;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 .nav a:hover,
 .nav a.active {
-  color: #2a2a0f;
-  font-weight: bold;
+    color: #2a2a0f;
+    font-weight: bold;
 }
 
 /* ---------- CTA Button ---------- */
 .btn {
-  background: transparent;
-  border: 3px solid #2a2a0f;
-  border-radius: 7px;
-  padding: 0.6rem 1.25rem;
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  transition: all 0.2s;
+    background: transparent;
+    border: 3px solid #2a2a0f;
+    border-radius: 7px;
+    padding: 0.6rem 1.25rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: all 0.2s;
 }
 .btn:hover {
-  background: #2a2a0f;
-  color: #B8D4AD;
+    background: #2a2a0f;
+    color: #b8d4ad;
 }
 
 /* ---------- Hamburger ---------- */
 .menu-icon {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  user-select: none;
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
 }
-#menu-toggle { display: none; }
+#menu-toggle {
+    display: none;
+}
 
 /* ---------- Responsive ---------- */
 
 /* --- Tablets: shrink link gap --- */
 @media (max-width: 992px) {
-  .nav ul { gap: 2rem; }
+    .nav ul {
+        gap: 2rem;
+    }
 }
 
 /* --- Phones: hamburger menu --- */
 @media (max-width: 768px) {
-  .nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff;
-    display: none;
-    border-top: 1px solid #eee;
-    text-align: center;
-  }
-  .nav ul {
-    flex-direction: column;
-    padding: 1rem 0;
-    gap: 1rem;
-  }
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        display: none;
+        border-top: 1px solid #eee;
+        text-align: center;
+    }
+    .nav ul {
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 1rem;
+    }
 
-  /* show nav when checkbox checked */
-  #menu-toggle:checked + .menu-icon + .nav {
-    display: block;
-  }
+    /* show nav when checkbox checked */
+    #menu-toggle:checked + .menu-icon + .nav {
+        display: block;
+    }
 
-  .menu-icon { display: block; }
-  .btn { display: none; } /* hide CTA button or move it inside nav if you prefer */
+    .menu-icon {
+        display: block;
+        color: black;
+    }
+    .btn {
+        display: none;
+    } /* hide CTA button or move it inside nav if you prefer */
 }
 
 /* =========================================Dashboard Section=========================================================== */
 
 /* --- Reset --- */
-* { box-sizing:border-box; margin:0; padding:0; }
-body { margin:0; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+}

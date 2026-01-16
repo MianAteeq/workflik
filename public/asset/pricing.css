@@ -600,46 +600,6 @@
     }
 }
 @media (max-width: 770px) {
-    .pricing-section {
-        padding: 90px 0;
-    }
-
-    .pricing-container {
-        padding: 20px 40px;
-        gap: 40px;
-    }
-
-    .pricing-left h1 {
-        font-size: 35px;
-    }
-
-    .pricing-left p {
-        font-size: 18px;
-    }
-
-    .pricing-right img {
-        max-width: 350px;
-    }
-    .pricing-btn {
-        padding: 12px 30px;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: 800;
-        font-size: 12px;
-    }
-    .pricing-container {
-        padding-top: 10px;
-    }
-    .pricing-left h1 {
-        font-size: 30px;
-        line-height: 2.5rem;
-        margin-bottom: 5px;
-    }
-    .pricing-img {
-        width: 130%;
-        height: auto;
-    }
-
     .pricing-card-section {
         flex-wrap: wrap;
         flex: 1;
@@ -734,9 +694,6 @@
     .workflow-title p {
         font-size: 12px;
         text-align: center;
-    }
-
-    .workflow-section {
     }
 
     .workflow-flex {
@@ -961,69 +918,16 @@
     }
 }
 @media (max-width: 430px) {
-    .pricing-left h1 {
-        font-size: 20px;
-        line-height: 2rem;
-    }
-    .pricing-section {
-        padding: 90px 0;
-    }
-
-    .pricing-section::before {
-        margin: 50px 15px 5px 15px;
-        padding-bottom: 0;
-        height: 330px;
-    }
-
-    .pricing-container {
-        padding: 20px 15px;
-        gap: 10px;
-
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    .pricing-left {
-        flex: 1;
-        min-width: 0;
-    }
-
-    .pricing-left p {
-        font-size: 12px;
-        max-width: 180px;
-        line-height: 1.5;
-        margin-bottom: 20px;
-    }
-    .pricing-img {
-        width: 120%;
-        height: auto;
-    }
-    .pricing-btn {
-        padding: 10px 20px;
-        font-size: 8px;
-    }
-
-    .pricing-right {
-        flex: 0 0 auto;
-        width: 50%;
-        max-width: 150px;
-    }
-
-    .pricing-right img {
-        width: 130%;
-        padding-top: 10px;
-        height: auto;
-    }
     .pricing-card-heading h1 {
         font-size: 20px;
         max-width: 250px;
-        padding-top: 50px;
     }
 
     .pricing-card-section {
         flex-wrap: wrap !important;
         margin: 20px;
         margin-bottom: 40px;
+        margin-right: 14px;
     }
 
     .pricing-cards {
@@ -1035,7 +939,7 @@
     .pricing-card {
         border-radius: 15px;
         height: 380px;
-        width: 290px;
+        width: 320px;
         padding: 25px 15px;
     }
 
@@ -1084,8 +988,8 @@
         justify-content: center;
         text-align: center;
         margin: 0;
-        margin-top: 20px;
-        font-size: 10px;
+        margin-top: 10px;
+        font-size: 12px;
     }
     .workflow-title {
         padding-top: 40px;
@@ -1291,7 +1195,7 @@
         padding-top: 10px;
         padding-left: 0;
     }
-     .pricing-card-section {
+    .pricing-card-section {
         flex-wrap: wrap !important;
         margin: 20px;
         margin-bottom: 40px;
@@ -1544,7 +1448,7 @@
         padding-top: 40px;
         padding-left: 0;
     }
-     .pricing-card-section {
+    .pricing-card-section {
         flex-wrap: wrap !important;
         margin: 20px;
         margin-bottom: 40px;
@@ -1697,14 +1601,14 @@
     .flow-service {
         width: 500px;
     }
-    .workflow-btn{
-      font-size: 10px;
+    .workflow-btn {
+        font-size: 10px;
     }
-    .workflow-btn:hover{
-    padding: 10px 30px;
-    color: #2a2a0f;
-    font-size: 10px;
-    background-color: white;
+    .workflow-btn:hover {
+        padding: 10px 30px;
+        color: #2a2a0f;
+        font-size: 10px;
+        background-color: white;
     }
     /*=================================Pricing Calculations =========================*/
     .pricing-cal {
@@ -1745,5 +1649,75 @@
         margin-right: 18px;
 
         margin-bottom: 50px;
+    }
+}
+
+/* =========================================
+   MOBILE PRICING SECTION (Max 430px)
+   ========================================= */
+@media (max-width: 430px) {
+    .pricing-section {
+        padding: 140px 20px 60px 20px; /* Matched spacing */
+        height: auto;
+        background: #fff;
+        overflow: visible;
+    }
+
+    /* Fix background image to cover full height */
+    .pricing-section::before {
+        height: 80%;
+        margin: 0;
+        opacity: 0.05;
+        background-size: cover;
+    }
+
+    .pricing-container {
+        display: flex;
+        /* Stack Vertically: Text Top, Image Bottom */
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 0;
+        width: 100%;
+    }
+
+    /* 1. TEXT SECTION (TOP) */
+    .pricing-left {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 1; /* Ensures text stays on top */
+    }
+
+    .pricing-left h1 {
+        font-size: 28px; /* Matched Dashboard Heading */
+        line-height: 1.3;
+        margin-bottom: 15px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .pricing-left p {
+        font-size: 14px; /* Matched Dashboard Body Text */
+        line-height: 1.6;
+        text-align: justify; /* Clean blocks of text */
+        margin-bottom: 25px;
+        max-width: 100%;
+    }
+
+    /* Button Styling */
+    .pricing-btn {
+        padding: 12px 35px;
+        font-size: 14px;
+        display: inline-block;
+        border-radius: 5px;
+        font-weight: 600;
+    }
+
+    /* 2. IMAGE SECTION (BOTTOM) */
+    .pricing-right {
+        display: none;
     }
 }
