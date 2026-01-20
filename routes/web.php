@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Route;
 
 Route::post('/contact/submit', [ContactController::class, 'submit'])->name('contact.submit');
 
@@ -22,11 +21,11 @@ Route::get('/pricing', function () {
     return view('pricing');
 })->name('home.pricing');
 
-Route::get('/contact/us', function () {
+Route::get('/contact_us', function () {
     return view('contact');
 })->name('home.contact');
 
-Route::get('/about/us', function () {
+Route::get('/about_us', function () {
     return view('about');
 })->name('home.about');
 
@@ -38,11 +37,9 @@ Route::get('/hr', function () {
     return view('hr');
 })->name('home.hr');
 
-
 Route::get('/pos', function () {
     return view('pos');
 })->name('home.pos');
-
 
 Route::get('/term', function () {
     return view('term');
