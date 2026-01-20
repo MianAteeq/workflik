@@ -428,7 +428,7 @@
         padding-bottom: 50px;
     }
     .features-heading {
-        height: 1650px;
+        height: 1730px;
     }
 }
 
@@ -768,7 +768,7 @@
         margin-bottom: 0;
     }
     .inside-subtitle {
-        font-size: 10px;
+        font-size: 12px;
         margin-bottom: 0;
         padding-bottom: 30px;
     }
@@ -1077,618 +1077,362 @@
 .main-card {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Vertically center content */
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 60px;
     position: relative;
-    overflow: visible; /* let small cards overflow on right */
-}
-
-.main-card::before {
-    display: none;
+    overflow: hidden; /* Contains the overflowing negative margins */
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+    gap: 40px;
 }
 
 /* Left part */
 .left-part {
-    flex: 1;
-    padding-right: 40px;
+    flex: 1; /* Takes up available space */
+    min-width: 300px; /* Prevents text from getting too squashed */
+    z-index: 2;
 }
 
 .left-part h1 {
     font-size: 3.7rem;
     margin-bottom: 20px;
-    max-width: 690px;
     color: #2a2a0f;
-    line-height: 3.3rem;
+    line-height: 1.1;
 }
 
 .left-part p {
     font-size: 1.4rem;
     margin-bottom: 25px;
     color: #555;
-    max-width: 620px;
     text-align: justify;
+    max-width: 620px;
 }
 
-.trial-btn {
+.inside-trial {
     background: transparent;
     color: #2a2a0f;
     border: 3px solid #2a2a0f;
     padding: 14px 28px;
     font-size: 1rem;
     border-radius: 8px;
-    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
     transition: background 0.2s;
+    font-weight: bold;
 }
-.trial-btn:hover {
+
+.inside-trial:hover {
     background: #2a2a0f;
     color: #b8d4ad;
 }
 
-/* Right part – 3 vertical cards slightly out of main card */
+/* ================== ANIMATION SECTION ================== */
+
+/* Right part - The "Window" */
 .right-part {
-    display: grid;
-    grid-template-rows: repeat(3, auto);
-    gap: 40px;
-    margin-right: -75px; /* ✅ push them slightly out of main card */
-    justify-items: end;
+    /* Responsive Width Logic */
+    flex: 1;
+    min-width: 300px; /* Ensures it doesn't disappear */
+    max-width: 500px; /* Limits max size on desktop */
+
+    height: 400px; /* Fixed height for the scrolling window */
+    overflow: hidden; /* Hides cards outside the box */
+    position: relative;
+
+    /* Fade effect at top and bottom */
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
 }
 
-.mini-card-1 {
+/* The Moving Track */
+.scroll-track {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* Animation: Name | Duration | Timing | Iteration */
+    animation: scrollVertical 10s linear infinite;
+}
+
+/* Pause on hover */
+.right-part:hover .scroll-track {
+    animation-play-state: paused;
+}
+
+@keyframes scrollVertical {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    } /* Moves up exactly half (since we duplicated) */
+}
+
+/* CARDS STYLING */
+/* Common styles for all cards */
+.mini-card {
     background: #ffffff;
     border-radius: 10px;
-    padding: 10px;
-    padding-top: 25px;
-    margin-top: 20px;
-    box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.1);
-    width: 480px;
+    padding: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     font-weight: 400;
-    font-size: 32px;
-    justify-content: center;
+    font-size: 24px; /* Slightly smaller for better fit */
+    text-align: center;
+    display: flex;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+
+    /* RESPONSIVE WIDTHS */
+    width: 100%; /* Take full width of parent */
+    margin-left: auto; /* Aligns them to right if width < 100% */
 }
 
+/* Specific Widths (using percentages relative to .right-part container) */
+.mini-card-1 {
+    max-width: 100%;
+}
 .mini-card-2 {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 10px;
-    padding-top: 25px;
-    box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.1);
-    width: 430px;
-    font-weight: 400;
-    font-size: 32px;
-    text-align: center;
+    max-width: 90%;
 }
-
 .mini-card-3 {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 10px;
-    padding-top: 25px;
-    box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.1);
-    width: 370px;
-    font-weight: 400;
-    font-size: 32px;
-    text-align: center;
+    max-width: 80%;
 }
 
 /*=======================================Media Queries================================================*/
+
+/* Tablet & Smaller Laptops */
 @media (max-width: 1024px) {
+    .outer-section {
+        padding: 40px 5%;
+    }
+    .main-card {
+        padding: 40px;
+    }
     .left-part h1 {
-        font-size: 35px;
-        line-height: 1.9rem;
+        font-size: 2.5rem;
     }
     .left-part p {
-        font-size: 14px;
+        font-size: 1.1rem;
     }
 }
+
+/* Mobile Devices */
 @media (max-width: 768px) {
     .main-card {
-        flex-direction: column;
-        padding: 20px;
-    }
-    .right-part {
-        margin-right: 0;
-        margin-top: 10px;
-        justify-items: center;
+        flex-direction: column; /* Stack vertically */
+        padding: 30px 20px;
+        gap: 30px;
     }
 
-    .outer-section {
-        padding: 30px 8%; /* equal horizontal spacing */
-        background: #f2f9ef; /* just for contrast */
-    }
-
-    /* Main big card */
-    .main-card {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        background-color: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 50 10px;
-        position: relative;
-        overflow: visible;
-    }
-
-    .left-part h1 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        max-width: 390px;
-        color: #2a2a0f;
-        line-height: 2rem;
+    .left-part {
+        width: 100%;
+        padding-right: 0;
+        text-align: center; /* Center text on mobile */
     }
 
     .left-part p {
-        font-size: 1rem;
-        margin-bottom: 25px;
-        color: #555;
-        max-width: 300px;
-        text-align: justify;
+        margin: 0 auto 25px auto; /* Center the paragraph */
     }
 
-    .trial-btn {
-        background: transparent;
-        color: #2a2a0f;
-        border: 3px solid #2a2a0f;
-        padding: 12px 18px;
-        font-size: 0.8rem;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background 0.2s;
-    }
-    .trial-btn:hover {
-        background: #444;
-    }
-    .inside-trial {
-        padding: 12px 18px;
-        font-size: 0.8rem;
-        border-radius: 8px;
-    }
-    /* Right part – 3 vertical cards slightly out of main card */
+    /* Adjust the window size for mobile */
     .right-part {
-        display: grid;
-        grid-template-rows: repeat(3, auto);
-        gap: 10px;
-        margin-top: 0;
-        padding-bottom: 0;
-        padding-top: 0;
-        margin-right: -35px; /* ✅ push them slightly out of main card */
-        justify-items: end;
+        width: 100%;
+        max-width: 100%;
+        height: 300px; /* Shorter window for mobile */
+        margin-right: 0;
     }
 
-    .mini-card-1 {
-        background: #ffffff;
-        border-radius: 10px;
+    /* Make cards fill width on mobile for neatness */
+    .mini-card-1,
+    .mini-card-2,
+    .mini-card-3 {
+        max-width: 100%;
+        font-size: 20px;
         padding: 15px;
-        padding-bottom: 0;
-        box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.1);
-        width: 280px;
-        font-weight: 400;
-        font-size: 22px;
-        height: 60px;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .mini-card-2 {
-        background: #ffffff;
-        border-radius: 10px;
-        padding: 15px;
-        padding-bottom: 0;
-        box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.1);
-        width: 240px;
-        height: 60px;
-        font-weight: 400;
-        font-size: 22px;
-        text-align: center;
-    }
-
-    .mini-card-3 {
-        background: #ffffff;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 0;
-        line-height: 1rem;
-        box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.1);
-        width: 200px;
-        height: 60px;
-        font-weight: 400;
-        font-size: 22px;
-        text-align: center;
     }
 }
 
-@media (max-width: 430px) {
-    .main-card {
-        flex-direction: column;
-        padding: 20px;
-    }
-    .right-part {
-        margin-right: 0;
-        margin-top: 10px;
-        justify-items: center;
-    }
-
+/* ==========================================================================
+   Specific Fix for 320px - 400px Mobile Screens
+   ========================================================================== */
+@media (max-width: 400px) {
+    /* 1. Reduce outer spacing to prevent horizontal scrolling */
     .outer-section {
-        padding: 40px 8%; /* equal horizontal spacing */
-        background: #f2f9ef; /* just for contrast */
+        padding: 30px 6px; /* Very tight padding for small screens */
     }
 
-    /* Main big card */
+    /* 2. Compact the Main Card */
     .main-card {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        background-color: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 80 2px;
-        position: relative;
-        overflow: visible;
+        padding: 25px 15px; /* Reduce internal padding */
+        gap: 25px; /* Reduce gap between text and animation */
     }
 
-    .left-part {
-        margin-left: 0;
-        padding-left: 0;
-    }
-
+    /* 3. Typography Fixes: Shrink huge text */
     .left-part h1 {
-        font-size: 0.8rem;
-        margin-bottom: 10px;
-        max-width: 800px;
-        color: #2a2a0f;
-        line-height: 0.7rem;
+        font-size: 1.6rem; /* Much smaller headline */
+        line-height: 1.2;
+        margin-bottom: 15px;
+        margin-right: 18px;
     }
 
     .left-part p {
-        font-size: 0.6rem;
-        margin-bottom: 15px;
-        color: #555;
-        max-width: 500px;
-        text-align: justify;
+        font-size: 0.9rem; /* Readable paragraph size */
+        margin-bottom: 20px;
+        max-width: 255px;
+        margin-right: 32px;
     }
 
-    .trial-btn {
-        background: transparent;
-        color: #2a2a0f;
-        border: 3px solid #2a2a0f;
-        padding: 8px 12px;
-        font-size: 0.5rem;
-        border-radius: 8px;
-
-        cursor: pointer;
-        transition: background 0.2s;
-    }
-    .trial-btn:hover {
-        background: #2a2a0f;
-        color: #b8d4ad;
-    }
-
-    /* Right part – 3 vertical cards slightly out of main card */
-    .right-part {
-        display: grid;
-        grid-template-rows: repeat(3, auto);
-        gap: 1px;
-        margin-top: 0;
-        padding-bottom: 0;
-        padding-top: 0;
-        margin-right: -30px; /* ✅ push them slightly out of main card */
-        justify-items: end;
-    }
-
-    .mini-card-1 {
-        background: #ffffff;
-        border-radius: 10px;
-        padding: 10px;
-        padding-bottom: 0;
-        box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.1);
-        width: 180px;
-        font-weight: 400;
-        font-size: 14px;
-        height: 40px;
-
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .mini-card-2 {
-        background: #ffffff;
-        border-radius: 10px;
-        padding: 11px;
-        padding-bottom: 0;
-        box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.1);
-        width: 160px;
-        height: 40px;
-        font-weight: 400;
-        font-size: 14px;
-
-        text-align: center;
-    }
-
-    .mini-card-3 {
-        background: #ffffff;
-        border-radius: 10px;
-        padding: 11px;
-        margin-bottom: 0;
-        line-height: 1rem;
-        box-shadow: 0px 2px 8px 4px rgba(0, 0, 0, 0.1);
-        width: 140px;
-        height: 40px;
-        font-weight: 400;
-        font-size: 14px;
-
-        text-align: center;
-    }
+    /* 4. Fix Button Sizing */
     .inside-trial {
-        padding: 6px 18px;
-        font-size: 0.5rem;
+        width: 65%; /* Make button full width for easy clicking */
+        text-align: center;
+        padding: 12px 0px;
+        box-sizing: border-box; /* Ensure padding doesn't break width */
+        font-size: 0.7rem;
+        margin-right: 22px;
+    }
+
+    /* 5. CRITICAL FIX: Allow Animation Window to Shrink */
+    /* Previously 'min-width: 300px' was breaking the 320px screen */
+    .right-part {
+        min-width: 0 !important; /* Force override */
+        width: 100%;
+        height: 240px; /* Reduce height so it fits on one screen */
+        margin-top: 10px;
+    }
+
+    /* 6. Resize the Moving Cards */
+    .mini-card {
+        font-size: 15px; /* Smaller text inside cards */
+        padding: 10px; /* Reduce bulk */
         border-radius: 8px;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    }
+
+    /* 7. Adjust Animation Spacing */
+    .scroll-track {
+        gap: 15px; /* Reduce gap between moving cards */
+        margin-right: 25px;
     }
 }
-
-@media (max-width: 380px) {
-    .main-card {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .right-part {
-        margin-right: 0;
-        margin-top: 10px;
-        justify-items: center;
-    }
-
-    .outer-section {
-        padding: 40px 8%; /* equal horizontal spacing */
-        background: #f2f9ef; /* just for contrast */
-    }
-
-    /* Main big card */
-    .main-card {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        background-color: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 30;
-        position: relative;
-        overflow: visible;
-    }
-
-    .left-part {
-        margin-left: 0;
-        padding-top: 10px;
-        padding-left: 5px;
-    }
-
-    .left-part h1 {
-        font-size: 0.6rem;
-        margin-bottom: 10px;
-        max-width: 800px;
-        color: #2a2a0f;
-        line-height: 0.7rem;
-    }
-
-    .left-part p {
-        font-size: 0.5rem;
-        margin-bottom: 15px;
-        color: #555;
-        max-width: 500px;
-        text-align: justify;
-    }
-
-    /* Right part – 3 vertical cards slightly out of main card */
-    .right-part {
-        display: grid;
-        grid-template-rows: repeat(3, auto);
-        gap: -15px;
-        margin-top: 0;
-        padding-bottom: 0;
-        padding-top: 0;
-        margin-right: -20px; /* ✅ push them slightly out of main card */
-        justify-items: end;
-    }
-
-    .mini-card-1 {
-        border-radius: 6px;
-        padding: 5px;
-        width: 110px;
-        font-weight: 400;
-        font-size: 9px;
-        height: 25px;
-    }
-
-    .mini-card-2 {
-        border-radius: 6px;
-        padding: 5px;
-        width: 110px;
-        font-weight: 400;
-        font-size: 9px;
-        height: 25px;
-    }
-
-    .mini-card-3 {
-        border-radius: 6px;
-        padding: 5px;
-        width: 110px;
-        font-weight: 400;
-        font-size: 9px;
-        height: 25px;
-    }
-}
-
-@media (max-width: 320px) {
-    .main-card {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .right-part {
-        margin-right: 0;
-        margin-top: 10px;
-        justify-items: center;
-    }
-
-    .outer-section {
-        padding: 40px 8%; /* equal horizontal spacing */
-        background: #f2f9ef; /* just for contrast */
-    }
-
-    /* Main big card */
-    .main-card {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        background-color: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 30;
-        position: relative;
-        overflow: visible;
-    }
-
-    .left-part {
-        margin-left: 0;
-        padding-left: 0;
-    }
-
-    .left-part h1 {
-        font-size: 0.6rem;
-        margin-bottom: 10px;
-        max-width: 800px;
-        color: #2a2a0f;
-        line-height: 0.7rem;
-    }
-
-    .left-part p {
-        font-size: 0.5rem;
-        margin-bottom: 15px;
-        color: #555;
-        max-width: 500px;
-        text-align: justify;
-    }
-
-    .trial-btn {
-        border: 2px solid #2a2a0f;
-        padding: 5px 10px;
-        font-size: 0.4rem;
-        border-radius: 5px;
-    }
-
-    /* Right part – 3 vertical cards slightly out of main card */
-    .right-part {
-        display: grid;
-        grid-template-rows: repeat(3, auto);
-        gap: -15px;
-        margin-top: 0;
-        padding-bottom: 0;
-        padding-top: 0;
-        margin-right: -20px; /* ✅ push them slightly out of main card */
-        justify-items: end;
-    }
-
-    .mini-card-1 {
-        border-radius: 6px;
-        padding: 5px;
-        width: 110px;
-        font-weight: 400;
-        font-size: 9px;
-        height: 25px;
-    }
-
-    .mini-card-2 {
-        border-radius: 6px;
-        padding: 5px;
-        width: 110px;
-        font-weight: 400;
-        font-size: 9px;
-        height: 25px;
-    }
-
-    .mini-card-3 {
-        border-radius: 6px;
-        padding: 5px;
-        width: 110px;
-        font-weight: 400;
-        font-size: 9px;
-        height: 25px;
-    }
-}
-
 /*====================================Testimonial Section===================================================*/
 /* --- Section Heading --- */
+/* ==========================================================================
+   Testimonial Section - Final Fixes
+   ========================================================================== */
 .testimonial-section {
-    padding: 60px 20px;
+    padding: 60px 0;
     background: #ffffff;
-
     text-align: center;
+    width: 100%;
+    overflow: hidden;
 }
 
 .testimonial-section h2 {
-    font-size: 3.5rem;
-    margin-bottom: 40px;
+    font-size: 3rem;
+    margin-bottom: 50px;
     color: #2a2a0f;
+    text-align: center;
 }
 
-/* --- Container for 3 Cards --- */
-.testimonial-container {
+/* --- Window & Track --- */
+.scroll-window {
+    width: 100%;
+    overflow: hidden !important;
+    position: relative;
+    padding: 20px 0;
     display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap; /* ✅ Responsive: wrap on small screens */
+    justify-content: flex-start;
+    align-items: center;
 }
 
-/* --- Individual Card --- */
+.scroll-track {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 40px;
+    width: max-content !important;
+    /* Ensure all cards stretch to the same height */
+    align-items: stretch;
+    animation: scrollHorizontal 35s linear infinite;
+}
+
+@keyframes scrollHorizontal {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* --- Card Styling --- */
 .testimonial-card {
     background: #fff;
-    width: 320px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 25px;
-    text-align: left; /* left align card content */
+    width: 420px; /* Slightly wider to fit text better */
+    min-width: 320px;
+    flex-shrink: 0 !important;
+
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    padding: 35px;
+    text-align: left;
+
     display: flex;
     flex-direction: column;
-    gap: 15px; /* equal spacing between sections */
+    justify-content: space-between; /* Pushes profile to bottom */
 }
 
-/* --- Stars --- */
+/* Stars & Review */
 .stars {
-    color: #f5a623; /* golden yellow */
-    font-size: 1.3rem;
-    margin-bottom: 2px; /* little spacing from bottom */
+    color: #f5a623;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
 }
 
-/* --- Review Paragraph --- */
 .review {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.3;
-    margin-bottom: 5px; /* little spacing */
-    text-align: justify;
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-weight: 400;
 }
 
-/* --- Profile Section --- */
+/* --- Profile Section (UPDATED) --- */
 .profile {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    margin-top: auto; /* Ensures it stays at bottom */
 }
 
+/* ✅ Big Profile Picture */
 .profile img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* round shape */
+    width: 70px; /* INCREASED SIZE */
+    height: 70px;
+    border-radius: 50%;
     object-fit: cover;
+    border: 3px solid #f2f9ef; /* Nice border */
 }
 
 .profile-info h1 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin: 0;
     color: #2a2a0f;
+    font-weight: 700;
 }
 
 .profile-info span {
@@ -1696,226 +1440,57 @@
     color: #777;
 }
 
-/* ✅ Get Started Button */
+/* Button */
 .get-started-btn {
     display: inline-block;
-    margin-top: 60px;
-    margin-bottom: 40px; /* spacing below button before cards */
-    padding: 14px 37px;
-    background: #8fbb8f; /* green button */
-    color: #000000;
+    margin-top: 50px;
+    padding: 16px 45px;
+    background: #8fbb8f;
+    color: #000;
     text-decoration: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
+    border-radius: 10px;
     font-weight: 600;
-    transition: background 0.3s ease;
+    font-size: 1.1rem;
+    transition: all 0.3s;
 }
 .get-started-btn:hover {
-    background: #2a2a0f; /* slightly darker green on hover */
-    color: #b8d4ad;
+    background: #2a2a0f;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
+/* ==========================================================================
+   Responsive (Mobile Fixes)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .testimonial-section h2 {
-        font-size: 40px;
-    }
-    .testimonial-container {
-        gap: 20px;
+    .testimonial-card {
+        width: 320px;
+        padding: 25px;
     }
 }
 
 @media (max-width: 430px) {
-    .testimonial-section h2 {
-        font-size: 28px;
-    }
-    .testimonial-container {
-        gap: 5px;
-    }
-    .testimonial-section {
-        padding: 60px 20px;
-        background: #ffffff;
-
-        text-align: center;
-    }
-
-    .testimonial-container {
-        display: flex;
-        justify-content: center;
+    .scroll-track {
         gap: 20px;
-        flex-wrap: wrap; /* ✅ Responsive: wrap on small screens */
     }
 
-    /* --- Individual Card --- */
     .testimonial-card {
-        background: #fff;
-        width: 300px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 25px;
-        text-align: left; /* left align card content */
-        display: flex;
-        flex-direction: column;
-        gap: 15px; /* equal spacing between sections */
+        width: 280px;
+        padding: 20px;
     }
 
-    /* --- Stars --- */
-    .stars {
-        color: #f5a623; /* golden yellow */
-        font-size: 1rem;
-        margin-bottom: 1px; /* little spacing from bottom */
-    }
-
-    /* --- Review Paragraph --- */
-    .review {
-        font-size: 0.6rem;
-        color: #555;
-        line-height: 1.3;
-        margin-bottom: 2px; /* little spacing */
-        text-align: justify;
-    }
-
-    /* --- Profile Section --- */
-    .profile {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
+    /* Slightly smaller image on mobile so it fits */
     .profile img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%; /* round shape */
-        object-fit: cover;
+        width: 55px;
+        height: 55px;
     }
 
-    .profile-info h1 {
-        font-size: 1rem;
-        margin: 0;
-        color: #222;
-        padding-bottom: 0;
+    .review {
+        font-size: 0.95rem;
     }
 
-    .profile-info span {
-        font-size: 0.6rem;
-        color: #777;
-        padding-top: 0;
-        margin-top: 0;
-    }
-
-    /* ✅ Get Started Button */
-    .get-started-btn {
-        display: inline-block;
-        margin-top: 40px;
-        margin-bottom: 20px; /* spacing below button before cards */
-        padding: 12px 33px;
-        background: #8fbb8f; /* green button */
-        color: #000000;
-        text-decoration: none;
-        border-radius: 8px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        transition: background 0.3s ease;
-    }
-    .get-started-btn:hover {
-        background: #2a2a0f; /* slightly darker green on hover */
-        color: #b8d4ad;
-    }
-}
-
-@media (max-width: 320px) {
     .testimonial-section h2 {
-        font-size: 22px;
-    }
-    .testimonial-container {
-        gap: 5px;
-    }
-    .testimonial-section {
-        padding: 20px 20px;
-        background: #ffffff;
-
-        text-align: center;
-    }
-
-    .testimonial-container {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap; /* ✅ Responsive: wrap on small screens */
-    }
-
-    /* --- Individual Card --- */
-    .testimonial-card {
-        background: #fff;
-        width: 250px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 18px;
-        text-align: left; /* left align card content */
-        display: flex;
-        flex-direction: column;
-        gap: 5px; /* equal spacing between sections */
-    }
-
-    /* --- Stars --- */
-    .stars {
-        color: #f5a623; /* golden yellow */
-        font-size: 0.8rem;
-        margin-bottom: 1px; /* little spacing from bottom */
-    }
-
-    /* --- Review Paragraph --- */
-    .review {
-        font-size: 0.5rem;
-        color: #555;
-        line-height: 1.3;
-        margin-bottom: 1px; /* little spacing */
-        text-align: justify;
-    }
-
-    /* --- Profile Section --- */
-    .profile {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-
-    .profile img {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%; /* round shape */
-        object-fit: cover;
-    }
-
-    .profile-info h1 {
-        font-size: 0.7rem;
-        margin: 0;
-        color: #222;
-        padding-bottom: 0;
-    }
-
-    .profile-info span {
-        font-size: 0.5rem;
-        color: #777;
-        padding-top: 0;
-        margin-top: 0;
-    }
-
-    /* ✅ Get Started Button */
-    .get-started-btn {
-        display: inline-block;
-        margin-top: 40px;
-        margin-bottom: 20px; /* spacing below button before cards */
-        padding: 8px 20px;
-        background: #8fbb8f; /* green button */
-        color: #000000;
-        text-decoration: none;
-        border-radius: 6px;
-        font-size: 0.6rem;
-        font-weight: 600;
-        transition: background 0.3s ease;
-    }
-    .get-started-btn:hover {
-        background: #2a2a0f; /* slightly darker green on hover */
-        color: #b8d4ad;
+        font-size: 2rem;
+        padding: 0 10px;
     }
 }

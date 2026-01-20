@@ -407,10 +407,6 @@
   </div>
   </section> -->
 
-    <div class="Free-trial-btn">
-        <a class="trial-btn" href="{{ route('home.register') }}">Start Your Free Trial</a>
-    </div>
-
 
 
     @include('layouts.footer')
